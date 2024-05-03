@@ -1,7 +1,7 @@
 import '@umijs/max';
 import React from 'react';
 import { ProCard, ProDescriptions } from '@ant-design/pro-components';
-import {useModel} from '@umijs/max';
+import { useModel } from '@umijs/max';
 
 const UserDetailsCard: React.FC<API.User> = () => {
   const { initialState } = useModel('@@initialState');

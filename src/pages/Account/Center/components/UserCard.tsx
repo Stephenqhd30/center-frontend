@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import React from 'react';
 import { useModel } from '@@/exports';
 import { ProCard } from '@ant-design/pro-components';
-import { IdcardOutlined, SmileOutlined, UserOutlined} from '@ant-design/icons';
+import { IdcardOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons';
 
 const UserInfoCard: React.FC<API.User> = () => {
   const { initialState } = useModel('@@initialState');
@@ -13,14 +13,11 @@ const UserInfoCard: React.FC<API.User> = () => {
     <>
       <ProCard layout="center" direction="column">
         <ProCard layout={'center'}>
-          <Card
-            hoverable
-            cover={<img alt={currentUser?.userName} src={currentUser?.userAvatar}/>}
-          >
+          <Card hoverable cover={<img alt={currentUser?.userName} src={currentUser?.userAvatar} />}>
             <p>
               <IdcardOutlined
                 style={{
-                  marginRight: 8
+                  marginRight: 8,
                 }}
               />
               {currentUser?.userName}
@@ -28,7 +25,7 @@ const UserInfoCard: React.FC<API.User> = () => {
             <p>
               <SmileOutlined
                 style={{
-                  marginRight: 8
+                  marginRight: 8,
                 }}
               />
               {currentUser?.userProfile}
@@ -36,15 +33,15 @@ const UserInfoCard: React.FC<API.User> = () => {
             <p>
               <UserOutlined
                 style={{
-                  marginRight: 8
+                  marginRight: 8,
                 }}
               />
               {currentUser?.userRole === 'admin' ? '管理员' : '普通用户'}
             </p>
-        </Card>
+          </Card>
+        </ProCard>
       </ProCard>
-    </ProCard>
-</>
-);
+    </>
+  );
 };
 export default UserInfoCard;
